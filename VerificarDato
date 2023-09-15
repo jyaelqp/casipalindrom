@@ -1,0 +1,50 @@
+package com.generation.math.test;
+
+	public class VerificarTipoDato {
+
+	
+
+	    // Función para obtener el tipo de dato de un carácter
+	    public static String obtenerTipoDato(char caracter) {
+	        // Verifica si el carácter es un dígito (número)
+	        if (Character.isDigit(caracter)) {
+	            return "Number"; // Si es un número, devuelve "Number"
+	        }
+	        // Verifica si el carácter es una letra mayúscula
+	        else if (Character.isUpperCase(caracter)) {
+	            return "Mayus"; // Si es mayúscula, devuelve "Mayus"
+	        }
+	        // Verifica si el carácter es una letra minúscula
+	        else if (Character.isLowerCase(caracter)) {
+	            return "Minus"; // Si es minúscula, devuelve "Minus"
+	        } else {
+	            return "Other"; // Si no es ninguno de los anteriores, devuelve "Other"
+	        }
+	    }
+
+	    public static void main(String[] args) {
+	        // Ejemplos de entradas
+	        String entrada1 = "12 street";
+	        String entrada2 = "Hola";
+	        String entrada3 = "crayoli";
+	        String entrada4 = "#c30";
+
+	        // Verificar el primer carácter de cada entrada
+	        char primerCaracter1 = entrada1.charAt(0);
+	        char primerCaracter2 = entrada2.charAt(0);
+	        char primerCaracter3 = entrada3.charAt(0);
+	        char primerCaracter4 = entrada4.charAt(0);
+
+	        // Obtener el tipo de dato del primer carácter
+	        String tipoDato1 = obtenerTipoDato(primerCaracter1);
+	        String tipoDato2 = obtenerTipoDato(primerCaracter2);
+	        String tipoDato3 = obtenerTipoDato(primerCaracter3);
+	        String tipoDato4 = obtenerTipoDato(primerCaracter4);
+
+	        // Mostrar el resultado
+	        System.out.println("\"" + entrada1 + "\" -> " + tipoDato1);
+	        System.out.println("\"" + entrada2 + "\" -> " + tipoDato2);
+	        System.out.println("\"" + entrada3 + "\" -> " + tipoDato3);
+	        System.out.println("\"" + entrada4 + "\" -> " + tipoDato4);
+	    }
+	}
