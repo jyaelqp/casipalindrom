@@ -1,0 +1,31 @@
+import org.junit.Test;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+public class palindromo {
+    public static boolean esCasiPalindromo(String palabra) {
+        palabra = palabra.trim().replaceAll("\\s", "").toLowerCase(); // Corregir para eliminar espacios antes y después
+        int cambios = 0;
+        for (int i = 0, j = palabra.length() - 1; i < j; i++, j--) {
+            if (palabra.charAt(i) != palabra.charAt(j)) {
+                cambios++;
+                if (cambios > 1) {
+                    return false;
+                }
+            }
+        }
+        return cambios == 1;
+    }
+    
+
+    @Test
+    public void testEsCasiPalindromo() {
+        assertFalse(esCasiPalindromo("Oso"));
+        assertTrue(esCasiPalindromo("Ver"));
+        assertFalse(esCasiPalindromo("Hola"));
+        assertTrue(esCasiPalindromo("Ocho"));
+        assertFalse(esCasiPalindromo("Veronica"));
+        assertTrue(esCasiPalindromo("Anita lavó la tina"));
+    }
+}
